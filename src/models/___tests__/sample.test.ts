@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-
 import 'config/env';
 
 import mongoose from 'mongoose';
