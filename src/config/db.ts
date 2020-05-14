@@ -7,7 +7,9 @@ export const connectionUrl = `${process.env.MONGO_CONNECTION}/${process.env.MONG
 
 export const connectionSettings = {
   useNewUrlParser: true,
-  useUnifiedTopology: false,
+  useUnifiedTopology: true,
+  replicaSet: process.env.MONGO_REPLICA_SET,
+  serverSelectionTimeoutMS: 1500,
 };
 
 mongoose.connect(connectionUrl, connectionSettings);
