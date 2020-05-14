@@ -3,9 +3,10 @@ import * as http from 'http';
 import supertest from 'supertest';
 import app from 'app';
 import Country from 'models/country';
+import db from 'config/db';
+import util from 'util';
 
-jest.unmock('mongoose');
-
+console.log(util.inspect(db, {showHidden: false, depth: null }));
 supertest(http.createServer(app.callback()));
 
 describe('Sample testing', () => {
