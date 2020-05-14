@@ -14,6 +14,7 @@ import Country from 'models/country';
 
 describe('Sample describe', () => {
   before(async () => {
+    console.log('Connection URL:', connectionUrl);
     return new Promise((resolve, reject) => {
       mongoose.connect(connectionUrl, connectionSettings).then(() => {
         console.log('Connected');
