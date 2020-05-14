@@ -12,15 +12,17 @@ import Country from 'models/country';
 
 // supertest(http.createServer(app.callback()));
 
-describe('First test', () => {
+describe('Sample describe', () => {
 
   before(async () => {
     console.log('Przed połączeniem z DB');
     await mongoose.connect(connectionUrl, connectionSettings);
     console.log('Po połączeniu z DB')
+
+    return true;
   });
 
-  it('should return true', async () => {
+  it('Sample test', async () => {
     console.log('Zaczynamy test');
     expect(1).to.equal(1);
 
