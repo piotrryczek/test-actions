@@ -1,23 +1,31 @@
 import 'config/env';
 import * as http from 'http';
 import supertest from 'supertest';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
 import app from 'app';
 import Country from 'models/country';
-import { connectionUrl, connectionSettings } from 'config/db';
+// import { connectionUrl, connectionSettings } from 'config/db';
 
 supertest(http.createServer(app.callback()));
 
 // jest.setTimeout(5000);
 
+const sleep = time => new Promise(resolve => setTimeout(() => { resolve(); }, time * 1000));
+
 describe('Sample testing', () => {
   beforeAll(async (done) => {
     console.log('Mongoose przed połączeniem');
-    mongoose.connect(connectionUrl, connectionSettings).then(() => {
-      console.log('Mongoose po połączeniu');
-      done();
-    }).catch(error => console.log('blad', error));
+
+    await sleep(2);
+
+    console.log('Mongoose po połączeniu');
+
+    done();
+    // mongoose.connect(connectionUrl, connectionSettings).then(() => {
+    //   console.log('Mongoose po połączeniu');
+    //   done();
+    // }).catch(error => console.log('blad', error));
     
   });
 
@@ -34,7 +42,7 @@ describe('Sample testing', () => {
     done();
   });
 
-  afterAll((done) => {
-    mongoose.disconnect(done);
-  });
+  // afterAll((done) => {
+  //   mongoose.disconnect(done);
+  // });
 });
