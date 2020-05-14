@@ -37,4 +37,4 @@ jobs:
           MONGO_DATABASE: test
           MONGO_REPLICA_SET: test
       - name: Build production
-          run: yarn build:prod --exit
+        run: yarn build:prod --exit
