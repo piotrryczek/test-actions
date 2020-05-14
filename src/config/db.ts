@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 // Importing models
-// ...
+import 'models/country';
 
 const connectionUrl = process.env.MONGO_CONNECTION;
 
