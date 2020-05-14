@@ -1,4 +1,4 @@
-import 'config/env';
+// import 'config/env';
 import * as http from 'http';
 import supertest from 'supertest';
 import app from 'app';
