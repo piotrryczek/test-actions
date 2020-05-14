@@ -34,6 +34,7 @@ jobs:
       - name: set env
         uses: allenevans/set-env@v1.0.0
         with:
+          MONGO_CONNECTION: 'mongodb://localhost:27017'
           MONGO_DATABASE: ''
       - name: test
         uses: borales/actions-yarn@v2.0.0
