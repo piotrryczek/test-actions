@@ -11,18 +11,20 @@ supertest(http.createServer(app.callback()));
 
 describe('Sample testing', () => {
   beforeAll(async (done) => {
-
+    console.log('Mongoose przed połączeniem');
     await mongoose.connect(connectionUrl, connectionSettings);
-
+    console.log('Mongoose po połączeniu');
     done();
   });
 
   it('Sample group should', async (done) => {
+    console.log('Zaczynamy test');
     expect(1).toEqual(1);
 
     const country = new Country({ name: 'Polska' });
+    console.log('Przed zapisem');
     await country.save();
-
+    console.log('Po zapisie');
     expect(country.name).toEqual('Polska');
 
     done();
