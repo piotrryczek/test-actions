@@ -9,7 +9,6 @@ console.log('Adres połączenia', connectionUrl);
 
 mongoose.connect(connectionUrl, {
   useNewUrlParser: true,
-  useCreateIndex: true,
   useUnifiedTopology: true,
 });
 
