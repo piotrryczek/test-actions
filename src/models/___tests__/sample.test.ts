@@ -15,12 +15,16 @@ import Country from 'models/country';
 describe('Sample describe', () => {
 
   before(async () => {
-    console.log('Przed połączeniem z DB');
-    console.log('URL łączenia', connectionUrl);
-    await mongoose.connect(connectionUrl, connectionSettings);
-    console.log('Po połączeniu z DB')
 
-    return true;
+    return new Promise((resolve, reject) => {
+      mongoose.connect(connectionUrl, connectionSettings).then(() => {
+        console.log('Połączono');
+        resolve();
+      }).catch((error) => {
+        console.log('Błąd:', error);
+        reject(error);
+      });
+    });
   });
 
   it('Sample test', async () => {
