@@ -13,28 +13,26 @@ import Country from 'models/country';
 // supertest(http.createServer(app.callback()));
 
 describe('Sample describe', () => {
-
   before(async () => {
-
     return new Promise((resolve, reject) => {
       mongoose.connect(connectionUrl, connectionSettings).then(() => {
-        console.log('Połączono');
+        console.log('Connected');
         resolve();
       }).catch((error) => {
-        console.log('Błąd:', error);
+        console.log('Error:', error);
         reject(error);
       });
     });
   });
 
   it('Sample test', async () => {
-    console.log('Zaczynamy test');
+    console.log('Starting test');
     expect(1).to.equal(1);
 
-    const country = new Country({ name: 'Polska' });
-    console.log('Przed zapisem');
+    const country = new Country({ name: 'Poland' });
+    console.log('Before save');
     await country.save();
-    console.log('Po zapisie');
-    expect(country.name).to.equal('Polska');
+    console.log('After save');
+    expect(country.name).to.equal('Poland');
   });
 });
