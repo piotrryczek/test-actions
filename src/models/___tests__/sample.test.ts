@@ -1,29 +1,29 @@
 import { expect } from 'chai';
 import 'config/env';
 
-import mongoose from 'mongoose';
-// import * as http from 'http';
-// import supertest from 'supertest';
+// import mongoose from 'mongoose';
+import * as http from 'http';
+import supertest from 'supertest';
 
-// import app from 'app';
-import { connectionUrl, connectionSettings } from 'config/db';
+import app from 'app';
+// import { connectionUrl, connectionSettings } from 'config/db';
 import Country from 'models/country';
 
-// supertest(http.createServer(app.callback()));
+supertest(http.createServer(app.callback()));
 
 describe('Sample describe', () => {
-  before(async () => {
-    console.log('Connection URL:', connectionUrl);
-    return new Promise((resolve, reject) => {
-      mongoose.connect(connectionUrl, connectionSettings).then(() => {
-        console.log('Connected');
-        resolve();
-      }).catch((error) => {
-        console.log('Error:', error);
-        reject(error);
-      });
-    });
-  });
+  // before(async () => {
+  //   console.log('Connection URL:', connectionUrl);
+  //   return new Promise((resolve, reject) => {
+  //     mongoose.connect(connectionUrl, connectionSettings).then(() => {
+  //       console.log('Connected');
+  //       resolve();
+  //     }).catch((error) => {
+  //       console.log('Error:', error);
+  //       reject(error);
+  //     });
+  //   });
+  // });
 
   it('Sample test', async () => {
     console.log('Starting test');
