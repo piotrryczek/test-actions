@@ -4,6 +4,8 @@ import supertest from 'supertest';
 import app from 'app';
 import Country from 'models/country';
 
+jest.unmock('mongoose');
+
 supertest(http.createServer(app.callback()));
 
 describe('Sample testing', () => {
