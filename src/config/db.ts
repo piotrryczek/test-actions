@@ -10,6 +10,6 @@ export const connectionSettings = {
   useUnifiedTopology: false,
 };
 
-mongoose.connect(connectionUrl, connectionSettings);
+mongoose.connect(connectionUrl);
 
 export default mongoose.connection;
