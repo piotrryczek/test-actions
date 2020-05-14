@@ -9,6 +9,8 @@ import { connectionUrl, connectionSettings } from 'config/db';
 
 supertest(http.createServer(app.callback()));
 
+jest.setTimeout(30000);
+
 describe('Sample testing', () => {
   beforeAll(async (done) => {
     console.log('Mongoose przed połączeniem');
