@@ -16,6 +16,7 @@ describe('Sample describe', () => {
 
   before(async () => {
     console.log('Przed połączeniem z DB');
+    console.log('URL łączenia', connectionUrl);
     await mongoose.connect(connectionUrl, connectionSettings);
     console.log('Po połączeniu z DB')
 
