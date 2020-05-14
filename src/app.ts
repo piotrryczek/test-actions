@@ -1,10 +1,10 @@
 import Koa from 'koa';
 
-import db from 'config/db';
+// import db from 'config/db';
 
-db.on('error', (error) => {
-  console.log(`Mongoose connection error: ${error}`);
-});
+// db.on('error', (error) => {
+//   console.log(`Mongoose connection error: ${error}`);
+// });
 
 const app = new Koa();
 
