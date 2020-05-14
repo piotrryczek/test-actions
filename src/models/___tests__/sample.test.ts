@@ -6,6 +6,8 @@ import Country from 'models/country';
 
 supertest(http.createServer(app.callback()));
 
+jest.setTimeout(10000);
+
 describe('Sample testing', () => {
   it('Sample group should', async (done) => {
     expect(1).toEqual(1);

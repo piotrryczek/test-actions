@@ -23,20 +23,20 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10
-      - name: install
+      - name: Installing dependencies
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
-      - name: build:prod
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build:prod
-      - name: set env
+      # - name: Bulding Production
+      #   uses: borales/actions-yarn@v2.0.0
+      #   with:
+      #     cmd: build:prod
+      - name: Setting Enviromentals
         uses: allenevans/set-env@v1.0.0
         with:
           MONGO_CONNECTION: 'mongodb://localhost:27017'
           MONGO_DATABASE: ''
-      - name: test
+      - name: Testing
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: test
