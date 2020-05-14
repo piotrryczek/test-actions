@@ -9,7 +9,7 @@ import { connectionUrl, connectionSettings } from 'config/db';
 
 supertest(http.createServer(app.callback()));
 
-jest.setTimeout(30000);
+// jest.setTimeout(5000);
 
 describe('Sample testing', () => {
   beforeAll(async (done) => {
