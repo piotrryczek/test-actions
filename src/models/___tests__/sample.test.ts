@@ -1,15 +1,22 @@
 import 'config/env';
 import * as http from 'http';
 import supertest from 'supertest';
+import mongoose from 'mongoose';
+
 import app from 'app';
 import Country from 'models/country';
-import db from 'config/db';
-import util from 'util';
+import { connectionUrl, connectionSettings } from 'config/db';
 
-console.log(util.inspect(db, {showHidden: false, depth: null }));
 supertest(http.createServer(app.callback()));
 
 describe('Sample testing', () => {
+  beforeAll(async (done) => {
+
+    await mongoose.connect(connectionUrl, connectionSettings);
+
+    done();
+  });
+
   it('Sample group should', async (done) => {
     expect(1).toEqual(1);
 
@@ -19,5 +26,9 @@ describe('Sample testing', () => {
     expect(country.name).toEqual('Polska');
 
     done();
+  });
+
+  afterAll((done) => {
+    mongoose.disconnect(done);
   });
 });

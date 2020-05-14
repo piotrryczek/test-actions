@@ -3,11 +3,13 @@ import mongoose from 'mongoose';
 // Importing models
 import 'models/country';
 
-const connectionUrl = `${process.env.MONGO_CONNECTION}/${process.env.MONGO_DATABASE}`;
+export const connectionUrl = `${process.env.MONGO_CONNECTION}/${process.env.MONGO_DATABASE}`;
 
-mongoose.connect(connectionUrl, {
+export const connectionSettings = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+};
+
+mongoose.connect(connectionUrl, connectionSettings);
 
 export default mongoose.connection;
