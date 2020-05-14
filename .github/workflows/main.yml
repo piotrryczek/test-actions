@@ -31,9 +31,11 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build:prod
+      - name: set env
+        uses: allenevans/set-env@v1.0.0
+        with:
+          MONGO_DATABASE: ''
       - name: test
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: test
-          env:
-            MONGO_DATABASE: a
