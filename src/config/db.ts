@@ -7,7 +7,7 @@ export const connectionUrl = `${process.env.MONGO_CONNECTION}/${process.env.MONG
 
 export const connectionSettings = {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: false,
 };
 
 mongoose.connect(connectionUrl, connectionSettings);
