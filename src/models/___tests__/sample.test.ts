@@ -14,9 +14,11 @@ supertest(http.createServer(app.callback()));
 describe('Sample testing', () => {
   beforeAll(async (done) => {
     console.log('Mongoose przed połączeniem');
-    await mongoose.connect(connectionUrl, connectionSettings);
-    console.log('Mongoose po połączeniu');
-    done();
+    mongoose.connect(connectionUrl, connectionSettings).then(() => {
+      console.log('Mongoose po połączeniu');
+      done();
+    }).catch(error => console.log('blad', error));
+    
   });
 
   it('Sample group should', async (done) => {
