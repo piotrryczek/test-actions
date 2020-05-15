@@ -22,8 +22,8 @@ jobs:
           node-version: 12.x
       - name: create file
         run: |
-        mkdir folder
-        touch folder/a.txt
+        mkdir 'folder'
+        touch 'folder/a.txt'
       - name: install rsync
         run: sudo apt-get --no-install-recommends install rsync
       - name: move file
