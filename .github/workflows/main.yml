@@ -42,6 +42,6 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           SOURCE: "./dist"
-          REMOTE_HOST: panel41.mydevil.net
-          REMOTE_USER: Nero12
-          TARGET: domains/stopikowo-staging.nero12.usermd.net/public_nodejs
+          REMOTE_HOST: "panel41.mydevil.net"
+          REMOTE_USER: "Nero12"
+          TARGET: "domains/stopikowo-staging.nero12.usermd.net/public_nodejs"
