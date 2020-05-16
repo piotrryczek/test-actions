@@ -30,28 +30,30 @@ jobs:
       #   run: mkdir folder2
       # - name: rsync Start
       #   run: rsync -var ./folder/ ./folder2
-      # - name: Install yarn
-      #   run: npm i -g yarn
-      # - name: install deps
-      #   run: yarn
+      - name: Install yarn
+        run: npm i -g yarn
+      - name: install deps
+        run: yarn
+        env:
+          CI: true
+      # - name: eslint
+      #   run: lint
+      # - name: Tests
+      #   run: yarn test --exit
       #   env:
       #     CI: true
-      # # - name: eslint
-      # #   run: lint
-      # # - name: Tests
-      # #   run: yarn test --exit
-      # #   env:
-      # #     CI: true
-      # #     MONGO_CONNECTION: mongodb://localhost:27017
-      # #     MONGO_DATABASE: test
-      # #     MONGO_REPLICA_SET: test
-      # - name: Build production
-      #   run: yarn build:prod
-      - name: Deploy to Staging server
-        uses: easingthemes/ssh-deploy@v2.0.7
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          SOURCE: folder
-          REMOTE_HOST: panel41.mydevil.net
-          REMOTE_USER: Nero12
-          TARGET: domains/stopikowo-staging.nero12.usermd.net/public_nodejs
+      #     MONGO_CONNECTION: mongodb://localhost:27017
+      #     MONGO_DATABASE: test
+      #     MONGO_REPLICA_SET: test
+      - name: Build production
+        run: yarn build:prod
+      - name: List files
+        run: ls -R
+      # - name: Deploy to Staging server
+      #   uses: easingthemes/ssh-deploy@v2.0.7
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+      #     SOURCE: folder
+      #     REMOTE_HOST: panel41.mydevil.net
+      #     REMOTE_USER: Nero12
+      #     TARGET: domains/stopikowo-staging.nero12.usermd.net/public_nodejs
