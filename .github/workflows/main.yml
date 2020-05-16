@@ -28,8 +28,8 @@ jobs:
         run: sudo apt-get --no-install-recommends install rsync
       - name: create second folder
         run: mkdir folder2
-      # - name: rsync Start
-      #   run: rsync -var ./folder/ ./folder2
+      - name: rsync Start
+        run: rsync -var ./folder/ ./folder2
       # - name: Install yarn
       #   run: npm i -g yarn
       # - name: install deps
