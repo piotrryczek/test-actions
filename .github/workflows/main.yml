@@ -48,7 +48,7 @@ jobs:
       - name: Build production
         run: yarn build:prod
       - name: List files
-        run: ls -R
+        run: ls -lh dist
       # - name: Deploy to Staging server
       #   uses: easingthemes/ssh-deploy@v2.0.7
       #   env:
