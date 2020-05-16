@@ -22,14 +22,10 @@ jobs:
           node-version: 12.x
       - name: create folder
         run: mkdir folder
-      - name: create file
-        run: touch folder/a.txt
-      # - name: install rsync
-      #   run: sudo apt-get --no-install-recommends install rsync
+      - name: install rsync
+        run: sudo apt-get --no-install-recommends install rsync
       # - name: create second folder
       #   run: mkdir folder2
-      # - name: rsync Start
-      #   run: rsync -var ./folder/ ./folder2
       - name: Install yarn
         run: npm i -g yarn
       - name: install deps
@@ -47,8 +43,10 @@ jobs:
       #     MONGO_REPLICA_SET: test
       - name: Build production
         run: yarn build:prod
+      - name: rsync Start
+        run: rsync -var dist folder
       - name: List files
-        run: ls -lh dist
+        run: ls -lh folder
       # - name: Deploy to Staging server
       #   uses: easingthemes/ssh-deploy@v2.0.7
       #   env:
