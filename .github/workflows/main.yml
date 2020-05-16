@@ -44,7 +44,7 @@ jobs:
       - name: Build production
         run: yarn build:prod
       - name: rsync Start
-        run: rsync -var dist folder
+        run: rsync -var dist/ folder
       - name: List files
         run: ls -lh folder
       # - name: Deploy to Staging server
