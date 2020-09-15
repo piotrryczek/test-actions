@@ -10,7 +10,7 @@ supertest(http.createServer(app.callback()));
 
 describe('Sample describe', () => {
   it('Sample test', async () => {
-    expect(1).to.equal(1);
+    expect(2).to.equal(2);
 
     const country = new Country({ name: 'Poland' });
     await country.save();
